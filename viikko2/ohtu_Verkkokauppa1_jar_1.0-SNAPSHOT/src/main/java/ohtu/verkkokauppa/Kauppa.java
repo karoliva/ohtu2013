@@ -1,9 +1,12 @@
 package ohtu.verkkokauppa;
+import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 
+@Component
 public class Kauppa implements Shoppi {
 
     public ShoppiIO io;
-
+@Autowired
     public Kauppa(Varasto varasto, Pankki pankki, Viitegeneraattori viitegen) {
         io= new ShoppiIO(varasto, pankki, viitegen);
     }

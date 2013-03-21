@@ -2,10 +2,6 @@ package ohtu;
 
 import ohtu.verkkokauppa.Kauppa;
 import ohtu.verkkokauppa.Kirjanpito;
-import ohtu.verkkokauppa.Pankki;
-import ohtu.verkkokauppa.ShoppiIO;
-import ohtu.verkkokauppa.Varasto;
-import ohtu.verkkokauppa.Viitegeneraattori;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
@@ -14,10 +10,7 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/resources/spring-context.xml");
 
-       Kirjanpito kirjanpito = (Kirjanpito) ctx.getBean("kirjanpito");
-//        Varasto varasto = (Varasto) ctx.getBean("varasto");
-//        Pankki pankki = (Pankki) ctx.getBean("pankki");
-//        Viitegeneraattori viitegen = (Viitegeneraattori) ctx.getBean("viitegeneraattori");
+        Kirjanpito kirjanpito = (Kirjanpito) ctx.getBean("kirjanpito");
         Kauppa kauppa = (Kauppa) ctx.getBean("kauppa");
 
         kauppa.aloitaAsiointi();
